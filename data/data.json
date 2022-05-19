@@ -1,0 +1,28 @@
+{
+    "flavors":[
+        {
+            "id" : 0,
+            "image": "https://cdn.shopify.com/s/files/1/1202/2528/products/deal_360x.jpg?v=1605490514",
+            "title": "Chew zero pack",
+            "price": 22.00,
+            "description": "Mast Chew is a deliciously healthy and organic chewing gum made in Australia. The organic gum base is known as mastic.",
+            "rating" : 4.5
+        },
+        {
+            "id" : 1,
+            "image": "https://cdn.shopify.com/s/files/1/1202/2528/products/MCO-Blister_360x.jpg?v=1528678442",
+            "title": "Chew Blister (16 pcs)",
+            "price": 4.50,
+            "description": "Mast Chew is a deliciously healthy and organic chewing gum made in Australia. The organic gum base is known as mastic.",
+            "rating" : 4.5
+        },
+        {
+            "id" : 2,
+            "image": "https://cdn.shopify.com/s/files/1/1202/2528/products/Cinnamon_360x.jpg?v=1583192124",
+            "title": "Chew Cinnamon Sleeve (8 pcs)",
+            "price": 3.30,
+            "description": "Mast Chew is a deliciously healthy and organic chewing gum made in Australia. The organic gum base is known as mastic.",
+            "rating" : 4.5
+        }
+    ]
+}
