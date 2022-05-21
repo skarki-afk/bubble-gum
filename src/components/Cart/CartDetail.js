@@ -1,11 +1,12 @@
 import "./cart.css"
 import DeleteIcon from '@mui/icons-material/Delete';
 import StarIcon from '@mui/icons-material/Star';
+import {Link} from "react-router-dom"
 
 const CartDetails = (props) =>{
-    const itemsPrice = props.cart.reduce((a,c) => a + c.price * c.quantity, 0)
-    const shipping = 10;
-    const totalPrice = itemsPrice + shipping;
+    // const itemsPrice = props.cart.reduce((a,c) => a + c.price * c.quantity, 0)
+    // const shipping = 10;
+    // const totalPrice = itemsPrice + shipping;
     return(
         <div className="cart">
             <div className="cart-title">
@@ -51,25 +52,27 @@ const CartDetails = (props) =>{
                 <h4 className="summary-title">Order Info:</h4>
                 <div className="price-collection">
                     <div className="summary-price">
-                        <h4>items price :</h4> <div>$ {itemsPrice.toFixed(2)} </div>
+                        <h4>items price :</h4> <div>$ {props.itemsPrice.toFixed(2)} </div>
                     </div>
                     <div className="summary-price">
-                        <h4>shipping :</h4> <div>$ {shipping.toFixed(2)} </div>
+                        <h4>shipping :</h4> <div>$ {props.shipping.toFixed(2)} </div>
                     </div>
                     <div className="border">
 
                      </div>
                     <div className="summary-price">
-                        <h4>total price :</h4> <div>$ {totalPrice.toFixed(2)} </div>
+                        <h4>total price :</h4> <div>$ {props.totalPrice.toFixed(2)} </div>
                     </div>
                 </div>
             </div>}
 
             {props.cart.length !==0 && 
             <div className="btn-space">
-                <button className="summary-btn">
-                    checkout
-                </button>
+                <Link to="/checkout" >
+                    <button className="summary-btn">
+                        checkout
+                    </button>
+                </Link>
             </div>}
         </div>
     )

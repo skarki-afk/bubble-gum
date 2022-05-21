@@ -5,6 +5,7 @@ import Home from './components/Home/Home';
 import Login from "./components/Login";
 import SignUp from "./components/Signup";
 import Home2 from "./components/Home2/Home2"
+import Checkout from "./components/Cart/Checkout";
 
 function App() {
   const storedCart = JSON.parse(localStorage.getItem("cart") || '[]')
@@ -15,6 +16,9 @@ function App() {
   }
   ,[cart])
 
+  const itemsPrice = cart.reduce((a,c) => a + c.price * c.quantity, 0)
+  const shipping = 10;
+  const totalPrice = itemsPrice + shipping;
 
   const onAdd =(product)=>{
     const exist = cart.find(x=> x.id === product.id)
@@ -56,10 +60,11 @@ function App() {
       <Router>
         <Routes>
         <Route path="/" element={<Home2 cart={cart} add={onAdd}/>}></Route> 
-          <Route path="/login" element={<Login/>}></Route> 
-          <Route path="/signup" element={<SignUp />}></Route>
-          <Route path='/home' element={<Home cart={cart} add={onAdd}/>}></Route>
-          <Route path='/cart' element={<Cart cart={cart} add={onAdd} delete={handleDelete} remove={onRemove}/>}></Route>
+        <Route path="/login" element={<Login/>}></Route> 
+        <Route path="/signup" element={<SignUp />}></Route>
+        <Route path='/home' element={<Home cart={cart} add={onAdd}/>}></Route>
+        <Route path='/cart' element={<Cart cart={cart} add={onAdd} delete={handleDelete} remove={onRemove} itemsPrice={itemsPrice} shipping={shipping} totalPrice={totalPrice}/>}></Route>
+        <Route path="/checkout" element={<Checkout itemsPrice={itemsPrice} shipping={shipping} totalPrice={totalPrice}/>}></Route>
         </Routes>
       </Router>
     </div>
