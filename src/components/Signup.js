@@ -22,7 +22,7 @@ const SignUp = () =>{
                     <label forhtml="confirm-password" className="browse-pass" >confirm-password</label>
                     <input type="password" className="field" required/>
                 </div>
-                <Link to="/" className="browse-link">
+                <Link to="/login" className="browse-link">
                     <button className="browse-btn">
                         sign up
                     </button>

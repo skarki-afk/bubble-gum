@@ -4,6 +4,7 @@ import Cart from "./components/Cart/Cart";
 import Home from './components/Home/Home';
 import Login from "./components/Login";
 import SignUp from "./components/Signup";
+import Home2 from "./components/Home2/Home2"
 
 function App() {
   const storedCart = JSON.parse(localStorage.getItem("cart") || '[]')
@@ -54,7 +55,8 @@ function App() {
     <div className="App">
       <Router>
         <Routes>
-          <Route path="/" element={<Login/>}></Route> 
+        <Route path="/" element={<Home2 cart={cart} add={onAdd}/>}></Route> 
+          <Route path="/login" element={<Login/>}></Route> 
           <Route path="/signup" element={<SignUp />}></Route>
           <Route path='/home' element={<Home cart={cart} add={onAdd}/>}></Route>
           <Route path='/cart' element={<Cart cart={cart} add={onAdd} delete={handleDelete} remove={onRemove}/>}></Route>

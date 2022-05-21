@@ -1,6 +1,6 @@
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import Badge from '@mui/material/Badge';
-import LogoutIcon from '@mui/icons-material/Logout';
+import LoginIcon from '@mui/icons-material/Logout';
 import {Link} from 'react-router-dom';
 import "../../index.css"
 
@@ -18,13 +18,13 @@ const Navbar =(props)=>{
                 </Link>
                 <li className="mid-list">about us</li>
                 <li className="mid-list ">product</li>
-                <li className='mid-list'>
+                {/* <li className='mid-list'>
                     <Badge badgeContent = {props.cart.length} color = "primary">
                         <Link className='link' to='/cart'>
                             <ShoppingCartIcon className='cart-icon'/>
                         </Link>
                     </Badge>
-                </li>
+                </li> */}
                 {/* <button className="btn btn-shop">
                     shop
                 </button> */}
@@ -33,8 +33,8 @@ const Navbar =(props)=>{
                         <ShoppingCartIcon className='cart-icon'/>
                     </Link>
                 </Badge> */}
-                <Link to="/login">
-                    <LogoutIcon className='logout'/>
+                <Link to="/login" className='link logout'>
+                    login
                 </Link>
             </div>
         </div>
