@@ -6,6 +6,7 @@ import Login from "./components/Login";
 import SignUp from "./components/Signup";
 import Home2 from "./components/Home2/Home2"
 import Checkout from "./components/Cart/Checkout";
+import ProductDetails from "./components/Home/ProductDetail"
 
 function App() {
   const storedCart = JSON.parse(localStorage.getItem("cart") || '[]')
@@ -63,6 +64,7 @@ function App() {
         <Route path="/login" element={<Login/>}></Route> 
         <Route path="/signup" element={<SignUp />}></Route>
         <Route path='/home' element={<Home cart={cart} add={onAdd}/>}></Route>
+        <Route path='/details/:id' element={<ProductDetails cart={cart} add={onAdd}/>}></Route>
         <Route path='/cart' element={<Cart cart={cart} add={onAdd} delete={handleDelete} remove={onRemove} itemsPrice={itemsPrice} shipping={shipping} totalPrice={totalPrice}/>}></Route>
         <Route path="/checkout" element={<Checkout itemsPrice={itemsPrice} shipping={shipping} totalPrice={totalPrice}/>}></Route>
         </Routes>

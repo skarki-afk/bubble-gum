@@ -3,7 +3,7 @@ import useFetch from "../../data/useFetch"
 
 const Flavors =(props)=>{
 
-    const {data, error, isPending} = useFetch()
+    const {data, error, isPending} = useFetch("http://localhost:8080/flavors")
     console.log(data)
     const dataElement = data.map(item=> {
         return (
